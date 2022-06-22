@@ -4,6 +4,9 @@ require_once __DIR__ . "/Department.php";
 
 //Get description of the single department from the database
 $id = $_GET["id"];
+
+var_dump($id);
+
 $sql_query = "SELECT * FROM `departments` WHERE `id` = $id;";
 $query_result = $conn->query($sql_query);
 
@@ -36,14 +39,14 @@ if ($query_result && $query_result->num_rows > 0) {
 <body>
 
     <?php foreach ($departments as $department_info) { ?>
-        <h1> <?php echo $department_info->name ?></h1>
-        <p><?php echo $department_info->head_of_department ?></p>
+        <h1> <?= $department_info->name ?></h1>
+        <p><?= $department_info->head_of_department ?></p>
 
         <h2>Contacts</h2>
 
         <ul>
             <?php foreach($department_info->printContacts() as $key => $value) {?>
-            <li><?php echo "$key: $value" ?></li>
+            <li><?= "$key: $value" ?></li>
             <?php } ?>
         </ul>
     <?php } ?>

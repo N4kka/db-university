@@ -1,4 +1,12 @@
-<?php 
+<?php
+//facimm 'na strage db-university
+//facimm 'na strage db-university
+//facimm 'na strage db-university
+//facimm 'na strage db-university
+//facimm 'na strage db-university
+//facimm 'na strage db-university
+//FROM GOMORRA SQL
+
 require_once __DIR__ . "/define.php";
 require_once __DIR__ . "/Department.php";
 
@@ -37,8 +45,8 @@ if($query_result && $query_result->num_rows > 0) {
     <h1>Departments List</h1>
     <?php foreach($departments as $department_list) { ?>
     <div>
-        <h2><?php echo $department_list->name; ?></h2>
-        <a href="department_info.php">Click to get more information</a>
+        <h2><?= $department_list->name; ?></h2>
+        <a href="department_info.php?id=<?= $department_list->id ?>  ">Click to get more information</a>
     </div>
     <?php } ?>
 
